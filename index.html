@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Livermont Inmobiliaria</title>
+<meta name="description" content="Livermont Inmobiliaria: terrenos campestres y de inversión en Huaral y Oxapampa. Asesoría personalizada, seguridad jurídica y alta rentabilidad.">
+<link rel="icon" type="image/png" href="https://inmobiliarialivermont.com/assets/logo-dark.png">
+<link rel="shortcut icon" href="https://inmobiliarialivermont.com/assets/logo-dark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Space+Grotesk:wght@600;700&family=Caveat:wght@700&family=Outfit:wght@600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#top" class="navbar__logo">
+      <img src="https://inmobiliarialivermont.com/assets/logo-dark.png" alt="Livermont" class="navbar__logo-img">
+    </a>
+
+    <nav class="navbar__nav" id="navMenu">
+      <a href="#todos-los-proyectos" class="navbar__link">Proyectos</a>
+      <a href="#recorrido" class="navbar__link">Recorrido</a>
+      <a href="#cifras" class="navbar__link">Cifras</a>
+      <a href="#confianza" class="navbar__link">Confianza</a>
+      <a href="#faq" class="navbar__link">Preguntas</a>
+    </nav>
+
+    <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20hablar%20con%20un%20asesor%20de%20Livermont"
+       class="navbar__cta" target="_blank" rel="noopener">
+      Hablar con un asesor
+    </a>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="https://inmobiliarialivermont.com/assets/vive-completo.mp4" type="video/mp4">
+  </video>
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <p class="hero__coords">11°02'S, 77°12'O — Huaral &nbsp;·&nbsp; 10°34'S, 75°24'O — Oxapampa</p>
+
+    <h1 class="hero__title" id="heroTitle">
+      <span class="hero__title-line">Elige dónde</span>
+      <span class="hero__title-line"><span class="word-crecer" id="wordCrecer">crecer.</span></span>
+    </h1>
+
+    <p class="hero__subtitle">
+      Terrenos campestres y de inversión en Huaral y Oxapampa. Independizados y con financiamiento directo.
+    </p>
+
+    <div class="hero__actions">
+      <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20terrenos%20de%20Livermont"
+         class="btn btn--primary" target="_blank" rel="noopener">
+        Consultar por WhatsApp
+      </a>
+      <a href="#todos-los-proyectos" class="btn btn--ghost">Explorar proyectos</a>
+    </div>
+  </div>
+
+  <div class="hero__scrollcue" aria-hidden="true">
+    <span></span>
+    <p>Desliza</p>
+  </div>
+</section>
+
+<!-- ===================== CARDS DE PROYECTOS ===================== -->
+<section class="proyectos-cards" id="todos-los-proyectos">
+  <div class="proyectos-cards__intro">
+    <p class="proyectos-cards__coords">Nuestra Selección Inmobiliaria</p>
+    <h2 class="proyectos-cards__title">Elige dónde quieres invertir</h2>
+    <div class="proyectos-filter" id="proyectosFilter">
+      <button class="filter-btn is-active" data-filter="all">Todos los proyectos</button>
+      <button class="filter-btn" data-filter="huaral">Huaral</button>
+      <button class="filter-btn" data-filter="oxapampa">Oxapampa</button>
+    </div>
+  </div>
+
+  <div class="cards-grid">
+
+    <article class="p-card" data-category="huaral">
+      <div class="p-card__banner p-card__banner--toscana">
+        <img class="p-card__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Ftoscana-2.jpg&w=640&q=75" alt="Terreno en Residencial La Toscana, Huaral" loading="lazy">
+        <span class="p-card__badge">Huaral · Los Ángeles de Macatón</span>
+      </div>
+      <div class="p-card__body">
+        <h3 class="p-card__name">Residencial La Toscana</h3>
+        <p class="p-card__desc">Zona urbano-comercial según el Plan de Desarrollo Urbano, a 5 minutos de la plaza de Huaral. Con Club House y construido para disfrutarse desde el primer día.</p>
+        <ul class="p-card__specs">
+          <li><span>Desde</span><strong>200 m²</strong></li>
+          <li><span>Precio desde</span><strong>S/ 97,000</strong></li>
+          <li><span>Zonificación</span><strong>Urbano comercial</strong></li>
+        </ul>
+        <div class="p-card__tags">
+          <span>Club House</span><span>Parrillas</span><span>Mirador</span><span>Cancha de fútbol</span><span>+3 más</span>
+        </div>
+        <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20preguntar%20m%C3%A1s%20sobre%20Residencial%20La%20Toscana"
+           class="btn btn--primary p-card__btn" target="_blank" rel="noopener">
+          Solicitar información
+        </a>
+      </div>
+    </article>
+
+    <article class="p-card" data-category="oxapampa">
+      <div class="p-card__banner p-card__banner--renacer">
+        <img class="p-card__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Frenacer-10.jpg&w=640&q=75" alt="Terreno en Renacer de Oxapampa, selva central" loading="lazy">
+        <span class="p-card__badge">Oxapampa · Selva central</span>
+      </div>
+      <div class="p-card__body">
+        <h3 class="p-card__name">Renacer de Oxapampa</h3>
+        <p class="p-card__desc">Un condominio en plena selva, a 25 min de la plaza y del futuro aeropuerto. Bosque natural, piscina de agua manantial y senderos para reconectar.</p>
+        <ul class="p-card__specs">
+          <li><span>Lotes</span><strong>300 · 500 · 1000 m²</strong></li>
+          <li><span>Precio desde</span><strong>S/ 70,000</strong></li>
+          <li><span>Título</span><strong>Independizado</strong></li>
+        </ul>
+        <div class="p-card__tags">
+          <span>Piscina natural</span><span>Bosque</span><span>Senderos</span><span>Pachamanca</span><span>+6 más</span>
+        </div>
+        <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20preguntar%20m%C3%A1s%20sobre%20Renacer%20de%20Oxapampa"
+           class="btn btn--primary p-card__btn" target="_blank" rel="noopener">
+          Solicitar información
+        </a>
+      </div>
+    </article>
+
+    <article class="p-card" data-category="huaral">
+      <div class="p-card__banner p-card__banner--brisas">
+        <img class="p-card__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Fbrisas-3.jpg&w=640&q=75" alt="Terreno en Brisas del Campo, Huando" loading="lazy">
+        <span class="p-card__badge">Huaral · Huando</span>
+      </div>
+      <div class="p-card__body">
+        <h3 class="p-card__name">Brisas del Campo</h3>
+        <p class="p-card__desc">Un campo vivo con más de 15 variedades de frutas, sobre la vía principal de Huando. Pensado para tu casa de campo o tu próxima inversión.</p>
+        <ul class="p-card__specs">
+          <li><span>Desde</span><strong>250 m²</strong></li>
+          <li><span>Precio desde</span><strong>S/ 103,000</strong></li>
+          <li><span>Título</span><strong>Independizado</strong></li>
+        </ul>
+        <div class="p-card__tags">
+          <span>Piscina</span><span>Parrillas</span><span>Cancha de fútbol</span><span>Zona de meditación</span><span>+4 más</span>
+        </div>
+        <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20preguntar%20m%C3%A1s%20sobre%20Brisas%20del%20Campo"
+           class="btn btn--primary p-card__btn" target="_blank" rel="noopener">
+          Solicitar información
+        </a>
+      </div>
+    </article>
+
+    <article class="p-card p-card--entregado" data-category="oxapampa">
+      <div class="p-card__banner p-card__banner--esencia">
+        <img class="p-card__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Fesencia-1.jpg&w=640&q=75" alt="Proyecto entregado La Esencia de Oxapampa" loading="lazy">
+        <span class="p-card__badge p-card__badge--success">✓ Proyecto 100% Entregado</span>
+      </div>
+      <div class="p-card__body">
+        <h3 class="p-card__name">La Esencia de Oxapampa</h3>
+        <p class="p-card__desc">Nuestro primer proyecto en la selva central, ya entregado y habitado. La prueba de que en Livermont cumplimos lo que ofrecemos.</p>
+        <ul class="p-card__specs">
+          <li><span>Estado</span><strong>Entregado</strong></li>
+          <li><span>Ubicación</span><strong>Oxapampa, Pasco</strong></li>
+          <li><span>Título</span><strong>Independizado</strong></li>
+        </ul>
+        <div class="p-card__tags">
+          <span>Entregado</span><span>Habitado</span><span>Título en regla</span>
+        </div>
+        <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20preguntar%20m%C3%A1s%20sobre%20La%20Esencia%20de%20Oxapampa"
+           class="btn btn--primary p-card__btn" target="_blank" rel="noopener">
+          Solicitar información
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===================== PROYECTOS: DÍPTICO ===================== -->
+<section class="proyectos" id="proyectos">
+
+  <!-- LA TOSCANA -->
+  <article class="proyecto proyecto--toscana" id="toscana">
+    <div class="proyecto__media">
+      <img class="proyecto__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Ftoscana-2.jpg&w=640&q=75" alt="Residencial La Toscana, Huaral" loading="lazy">
+      <div class="proyecto__overlay" aria-hidden="true"></div>
+    </div>
+    <div class="proyecto__info">
+      <p class="proyecto__ubicacion">Huaral, Los Ángeles de Macatón</p>
+      <h2 class="proyecto__nombre">Residencial La Toscana</h2>
+      <p class="proyecto__desc">
+        Zona urbano-comercial según el Plan de Desarrollo Urbano de Huaral,
+        a solo 5 minutos de la plaza. Con Club House y áreas construidas
+        para que disfrutes tu terreno desde el primer día.
+      </p>
+
+      <ul class="proyecto__specs">
+        <li><span class="proyecto__spec-label">Ubicación</span><span class="proyecto__spec-value">Huaral, Los Ángeles de Macatón</span></li>
+        <li><span class="proyecto__spec-label">Metrajes</span><span class="proyecto__spec-value">Desde 200 m²</span></li>
+        <li><span class="proyecto__spec-label">Precio</span><span class="proyecto__spec-value">Desde S/ 97,000</span></li>
+        <li><span class="proyecto__spec-label">Zonificación</span><span class="proyecto__spec-value">Urbano comercial</span></li>
+      </ul>
+
+      <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20La%20Toscana%20en%20Huaral"
+         class="btn btn--toscana" target="_blank" rel="noopener">
+        Consultar La Toscana
+      </a>
+    </div>
+  </article>
+
+  <!-- EL RENACER -->
+  <article class="proyecto proyecto--renacer" id="renacer">
+    <div class="proyecto__info">
+      <p class="proyecto__ubicacion">Oxapampa, selva central</p>
+      <h2 class="proyecto__nombre">Renacer de Oxapampa</h2>
+      <p class="proyecto__desc">
+        Un condominio en plena selva, a 25 minutos de la plaza y del futuro
+        aeropuerto de Oxapampa. Bosque natural, piscina de agua manantial
+        y senderos para reconectar con la naturaleza.
+      </p>
+
+      <ul class="proyecto__specs">
+        <li><span class="proyecto__spec-label">Ubicación</span><span class="proyecto__spec-value">Oxapampa, selva central del Perú</span></li>
+        <li><span class="proyecto__spec-label">Lotes</span><span class="proyecto__spec-value">300 · 500 · 1000 m²</span></li>
+        <li><span class="proyecto__spec-label">Precio</span><span class="proyecto__spec-value">Desde S/ 70,000</span></li>
+        <li><span class="proyecto__spec-label">Título</span><span class="proyecto__spec-value">Independizado</span></li>
+      </ul>
+
+      <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20El%20Renacer%20en%20Oxapampa"
+         class="btn btn--renacer" target="_blank" rel="noopener">
+        Consultar El Renacer
+      </a>
+    </div>
+    <div class="proyecto__media">
+      <img class="proyecto__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Frenacer-10.jpg&w=640&q=75" alt="Renacer de Oxapampa" loading="lazy">
+      <div class="proyecto__overlay" aria-hidden="true"></div>
+    </div>
+  </article>
+
+  <!-- BRISAS DEL CAMPO -->
+  <article class="proyecto proyecto--brisas" id="brisas">
+    <div class="proyecto__media">
+      <img class="proyecto__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Fbrisas-1.jpg&w=1920&q=75" alt="Brisas del Campo, Huaral" loading="lazy">
+      <div class="proyecto__overlay" aria-hidden="true"></div>
+    </div>
+    <div class="proyecto__info">
+      <p class="proyecto__ubicacion">Huaral, Huando</p>
+      <h2 class="proyecto__nombre">Brisas del Campo</h2>
+      <p class="proyecto__desc">
+        Un campo vivo con más de 15 variedades de frutas, sobre la vía principal
+        de Huando. Pensado para tu casa de campo o tu próxima inversión.
+      </p>
+
+      <ul class="proyecto__specs">
+        <li><span class="proyecto__spec-label">Ubicación</span><span class="proyecto__spec-value">Huaral, Huando</span></li>
+        <li><span class="proyecto__spec-label">Metrajes</span><span class="proyecto__spec-value">Desde 250 m²</span></li>
+        <li><span class="proyecto__spec-label">Precio</span><span class="proyecto__spec-value">Desde S/ 103,000</span></li>
+        <li><span class="proyecto__spec-label">Título</span><span class="proyecto__spec-value">Independizado</span></li>
+      </ul>
+
+      <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Brisas%20del%20Campo%20en%20Huaral"
+         class="btn btn--brisas" target="_blank" rel="noopener">
+        Consultar Brisas del Campo
+      </a>
+    </div>
+  </article>
+
+  <!-- LA ESENCIA DE OXAPAMPA -->
+  <article class="proyecto proyecto--esencia" id="esencia">
+    <div class="proyecto__info">
+      <p class="proyecto__ubicacion">Oxapampa, Pasco</p>
+      <h2 class="proyecto__nombre">La Esencia de Oxapampa</h2>
+      <p class="proyecto__desc">
+        Nuestro primer proyecto en la selva central, ya entregado y habitado.
+        La prueba de que en Livermont cumplimos lo que ofrecemos.
+      </p>
+
+      <ul class="proyecto__specs">
+        <li><span class="proyecto__spec-label">Ubicación</span><span class="proyecto__spec-value">Oxapampa, Pasco</span></li>
+        <li><span class="proyecto__spec-label">Estado</span><span class="proyecto__spec-value">Proyecto Entregado</span></li>
+        <li><span class="proyecto__spec-label">Comunidad</span><span class="proyecto__spec-value">100% Habitado</span></li>
+        <li><span class="proyecto__spec-label">Título</span><span class="proyecto__spec-value">Independizado</span></li>
+      </ul>
+
+      <a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20La%20Esencia%20de%20Oxapampa"
+         class="btn btn--esencia" target="_blank" rel="noopener">
+        Consultar La Esencia
+      </a>
+    </div>
+    <div class="proyecto__media">
+      <img class="proyecto__img" src="https://inmobiliarialivermont.com/_next/image?url=%2Fassets%2Fesencia-2.jpg&w=640&q=75" alt="La Esencia de Oxapampa" loading="lazy">
+      <div class="proyecto__overlay" aria-hidden="true"></div>
+    </div>
+  </article>
+
+</section>
+
+<!-- ===================== RECORRIDO (HORIZONTAL SCROLL DESKTOP / CARRUSEL MOBILE) ===================== -->
+<section class="recorrido" id="recorrido">
+  <div class="recorrido__intro">
+    <p class="recorrido__coords">El camino hasta tu terreno</p>
+    <h2 class="recorrido__title">De la ciudad a tu tierra</h2>
+  </div>
+
+  <div class="recorrido__track" id="recorridoTrack">
+    <div class="recorrido__panels" id="recorridoPanels">
+
+      <div class="recorrido__panel">
+        <span class="recorrido__panel-index">01 • Ubicación</span>
+        <h3>Dos rutas, un mismo destino</h3>
+        <p>Huaral por la Panamericana Norte, Oxapampa por la Carretera Central.
+           Ambas rutas conectadas y accesibles todo el año.</p>
+      </div>
+
+      <div class="recorrido__panel">
+        <span class="recorrido__panel-index">02 • Áreas</span>
+        <h3>Terrenos habilitados y medidos</h3>
+        <p>Cada lote cuenta con linderos definidos, plano georreferenciado
+           y documentación lista para tu inscripción.</p>
+      </div>
+
+      <div class="recorrido__panel">
+        <span class="recorrido__panel-index">03 • Servicios</span>
+        <h3>Agua, luz y carreteras</h3>
+        <p>Proyectos con factibilidad de servicios básicos y accesos, areas verdes, 
+           que ya están siendo habilitados por etapas.</p>
+      </div>
+
+      <div class="recorrido__panel">
+        <span class="recorrido__panel-index">04 • Beneficios</span>
+        <h3>Financiamiento directo</h3>
+        <p>Planes de pago sin bancos, cuota inicial flexible apartir del 30% del valor de tu lote y
+           acompañamiento en cada paso de la compra.</p>
+      </div>
+
+      <div class="recorrido__panel">
+        <span class="recorrido__panel-index">05 • Amenidades</span>
+        <h3>Zonas comunes pensadas para vivir</h3>
+        <p>Áreas verdes, Casa Club, juegos infantiles, piscina natural, portico de ingreso y vigilancia según el
+           proyecto, para que tu terreno también sea comunidad.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ESTADÍSTICAS ===================== -->
+<section class="cifras" id="cifras">
+  <h2 class="cifras__title">Por qué invertir en tierra hoy</h2>
+
+  <div class="cifras__grid">
+    <div class="cifra">
+      <p class="cifra__numero" data-count="38">0</p>
+      <p class="cifra__sufijo">%</p>
+      <p class="cifra__label">Revalorización proyectada en 5 años en zonas similares</p>
+    </div>
+    <div class="cifra">
+      <p class="cifra__numero" data-count="1200">0</p>
+      <p class="cifra__sufijo">+</p>
+      <p class="cifra__label">Metros cuadrados habilitados entre ambos proyectos</p>
+    </div>
+    <div class="cifra">
+      <p class="cifra__numero" data-count="12">0</p>
+      <p class="cifra__sufijo">meses</p>
+      <p class="cifra__label">Planes de financiamiento directo sin entidad bancaria</p>
+    </div>
+    <div class="cifra">
+      <p class="cifra__numero" data-count="100">0</p>
+      <p class="cifra__sufijo">%</p>
+      <p class="cifra__label">De los lotes con documentación saneada</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIVERMONT EN CIFRAS (EMPRESA) ===================== -->
+<section class="empresa" id="empresa">
+  <div class="empresa__grid">
+    <div class="empresa__cifra">
+      <p class="empresa__numero" data-count="4">0</p>
+      <p class="empresa__sufijo">años</p>
+      <p class="empresa__label">Creciendo junto con el Perú</p>
+    </div>
+    <div class="empresa__cifra">
+      <p class="empresa__numero" data-count="400">0</p>
+      <p class="empresa__sufijo">+</p>
+      <p class="empresa__label">Familias e inversionistas confiaron en nosotros</p>
+    </div>
+    <div class="empresa__cifra">
+      <p class="empresa__numero" data-count="3">0</p>
+      <p class="empresa__sufijo"></p>
+      <p class="empresa__label">Proyectos en venta actualmente</p>
+    </div>
+    <div class="empresa__cifra">
+      <p class="empresa__numero" data-count="1">0</p>
+      <p class="empresa__sufijo"></p>
+      <p class="empresa__label">Proyecto ya entregado y habitado</p>
+    </div>
+  </div>
+</section>
+<section class="confianza" id="confianza">
+  <div class="confianza__header">
+    <p class="confianza__coords">Lo que dicen quienes ya compraron</p>
+    <h2 class="confianza__title">Compra tu terreno sin dudas</h2>
+  </div>
+
+  <div class="reviews-ticker" id="reviewsTicker">
+    <div class="reviews-ticker__track">
+      <!-- SET 1 -->
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=250&q=80" alt="Familia Injante" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Familia Injante</p>
+            <p class="review__meta">La Toscana, Huaral</p>
+            <span class="review__verified">✓ Comprador Verificado</span>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"nos acompañaron en todo el proceso y el plan de pagos si calzaba con nuestro presupuesto, sin letra pequeña ni sorpresas"</p>
+        <p class="review__date">Hace 3 semanas</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=250&q=80" alt="Roberto Salazar" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Roberto Salazar</p>
+            <p class="review__meta">El Renacer, Oxapampa</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"la verdad me daba un poco de miedo comprar desde Lima sin ver el terreno pero el asesor me mando videos de todo y cuando fui a Oxapampa coincidio tal cual"</p>
+        <p class="review__date">Hace 1 mes</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=250&q=80" alt="Carmen Vidal" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Carmen Vidal</p>
+            <p class="review__meta">La Toscana, Huaral</p>
+            <span class="review__verified">✓ Comprador Verificado</span>
+          </div>
+        </div>
+        <div class="review__stars">★★★★<span class="review__star-empty">★</span></div>
+        <p class="review__text">"Buena atencion y el lote bonito. En la notaria demoro unos dias mas por el tramite de sunarp pero todo salio bien al final"</p>
+        <p class="review__date">Hace 2 meses</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=250&q=80" alt="Gonzalo Mendoza" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Gonzalo Mendoza</p>
+            <p class="review__meta">Brisas del Campo, Huaral</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"buscaba un terreno en Huando para sembrar mis frutales y pasar el finde con la familia. Todo legal y bien ubicado"</p>
+        <p class="review__date">Hace 1 mes</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=250&q=80" alt="Dra. Patricia Alarcón" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Dra. Patricia Alarcón</p>
+            <p class="review__meta">La Esencia, Oxapampa</p>
+            <span class="review__verified">✓ Comprador Verificado</span>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"Compramos en preventa hace un tiempo en La Esencia y ya tenemos el lote entregado y habitado. Cumplieron con todo lo prometido"</p>
+        <p class="review__date">Hace 3 meses</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=250&q=80" alt="Marco & Sofía" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Marco & Sofía</p>
+            <p class="review__meta">Renacer de Oxapampa</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"Fuimos a la visita guiada el mes pasado y nos enamoramos del lugar jaja la piscina de agua manantial es hermosa"</p>
+        <p class="review__date">Hace 2 semanas</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=250&q=80" alt="Víctor Paredes" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Víctor Paredes</p>
+            <p class="review__meta">La Toscana, Huaral</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"el financiamiento directo nos facilito todo pq los bancos piden demasiados papeles. Ya estamos proyectando la construccion"</p>
+        <p class="review__date">Hace 1 mes</p>
+      </article>
+
+      <article class="review-card">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80" alt="Lucía Echevarría" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Lucía Echevarría</p>
+            <p class="review__meta">Brisas del Campo, Huaral</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★<span class="review__star-empty">★</span></div>
+        <p class="review__text">"se corrio la fecha de la firma 3 dias por agenda del notario pero el chico de livermont me acompaño en todo momento"</p>
+        <p class="review__date">Hace 2 meses</p>
+      </article>
+
+      <!-- REPETICIÓN PARA LOOP INFINITO SIN SALTO -->
+      <article class="review-card" aria-hidden="true">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=250&q=80" alt="Familia Injante" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Familia Injante</p>
+            <p class="review__meta">La Toscana, Huaral</p>
+            <span class="review__verified">✓ Comprador Verificado</span>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"nos acompañaron en todo el proceso y el plan de pagos si calzaba con nuestro presupuesto, sin letra pequeña ni sorpresas"</p>
+        <p class="review__date">Hace 3 semanas</p>
+      </article>
+
+      <article class="review-card" aria-hidden="true">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=250&q=80" alt="Roberto Salazar" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Roberto Salazar</p>
+            <p class="review__meta">El Renacer, Oxapampa</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"la verdad me daba un poco de miedo comprar desde Lima sin ver el terreno pero el asesor me mando videos de todo y cuando fui a Oxapampa coincidio tal cual"</p>
+        <p class="review__date">Hace 1 mes</p>
+      </article>
+
+      <article class="review-card" aria-hidden="true">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=250&q=80" alt="Carmen Vidal" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Carmen Vidal</p>
+            <p class="review__meta">La Toscana, Huaral</p>
+            <span class="review__verified">✓ Comprador Verificado</span>
+          </div>
+        </div>
+        <div class="review__stars">★★★★<span class="review__star-empty">★</span></div>
+        <p class="review__text">"Buena atencion y el lote bonito. En la notaria demoro unos dias mas por el tramite de sunarp pero todo salio bien al final"</p>
+        <p class="review__date">Hace 2 meses</p>
+      </article>
+
+      <article class="review-card" aria-hidden="true">
+        <div class="review__top">
+          <img class="review__avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=250&q=80" alt="Gonzalo Mendoza" loading="lazy">
+          <div class="review__who">
+            <p class="review__name">Gonzalo Mendoza</p>
+            <p class="review__meta">Brisas del Campo, Huaral</p>
+          </div>
+        </div>
+        <div class="review__stars">★★★★★</div>
+        <p class="review__text">"buscaba un terreno en Huando para sembrar mis frutales y pasar el finde con la familia. Todo legal y bien ubicado"</p>
+        <p class="review__date">Hace 1 mes</p>
+      </article>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== PREGUNTAS FRECUENTES ===================== -->
+<section class="faq" id="faq">
+  <div class="faq__intro">
+    <p class="faq__coords">— PREGUNTAS FRECUENTES</p>
+    <h2 class="faq__title">Resolvemos tus dudas<br>antes de invertir</h2>
+    <p class="faq__respaldo">
+      Somos una empresa formal con 4 años en el rubro inmobiliario y pertenecemos
+      a un grupo corporativo junto a Evermont (importaciones) y GCYM (e-commerce),
+      con más de 13 años combinados de experiencia. Actualmente en Huaral
+      (Brisas del Campo y Residencial La Toscana) y en la selva de Oxapampa
+      (Renacer de Oxapampa), además de nuestro proyecto ya entregado,
+      La Esencia de Oxapampa.
+    </p>
+  </div>
+
+  <div class="faq__list" id="faqList">
+    <div class="faq__item is-open">
+      <button class="faq__question" aria-expanded="true">
+        <span>¿Los lotes cuentan con título?</span>
+        <span class="faq__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq__answer">
+        <p>Sí, todos nuestros proyectos
+           cuentan con título independizado. En cada proyecto te detallamos
+           el estado legal específico por escrito.</p>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        <span>¿Cómo funciona el financiamiento sin intereses?</span>
+        <span class="faq__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq__answer">
+        <p>En etapa de preventa financiamos directamente, sin bancos y sin
+           intereses. Defines una cuota inicial mayor al 30% del total de tu lote y pagos mensuales a tu medida
+           para asegurar tu lote al mejor precio.</p>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        <span>¿Puedo visitar el terreno antes de comprar?</span>
+        <span class="faq__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq__answer">
+        <p>Por supuesto. Organizamos visitas guiadas gratuitas para que
+           conozcas el proyecto, las áreas comunes y el avance real, sin
+           ningún compromiso.</p>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        <span>¿Qué respaldo tiene Livermont?</span>
+        <span class="faq__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq__answer">
+        <p>Somos una empresa formal con 4 años en el rubro inmobiliario y
+           pertenecemos a un grupo corporativo junto a Evermont (importaciones)
+           y GCYM (e-commerce), con más de 13 años combinados de experiencia
+           respaldando cada proyecto.</p>
+      </div>
+    </div>
+
+    <div class="faq__item">
+      <button class="faq__question" aria-expanded="false">
+        <span>¿En qué zonas tienen proyectos?</span>
+        <span class="faq__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq__answer">
+        <p>Actualmente en Huaral (Brisas del Campo y Residencial La Toscana)
+           y en la selva de Oxapampa (Renacer de Oxapampa), además de nuestro
+           proyecto ya entregado, La Esencia de Oxapampa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER / CTA FINAL ===================== -->
+<footer class="footer" id="contacto">
+  <div class="footer__cta">
+    <p class="footer__coords">Da el siguiente paso</p>
+    <h2 class="footer__title">Hablemos de tu terreno</h2>
+    <p class="footer__subtitle">
+      Cuéntanos qué buscas y un asesor te escribe directo, sin formularios
+      eternos ni esperas.
+    </p>
+  </div>
+
+  <form class="footer__form" id="contactForm">
+    <div class="footer__field">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="¿Cómo te llamas?">
+    </div>
+    <div class="footer__field">
+      <label for="telefono">WhatsApp</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="941 454 999">
+    </div>
+    <div class="footer__field">
+      <label for="proyecto">Me interesa</label>
+      <select id="proyecto" name="proyecto">
+        <option value="La Toscana">La Toscana — Huaral</option>
+        <option value="El Renacer">El Renacer — Oxapampa</option>
+        <option value="Brisas del Campo">Brisas del Campo — Huaral</option>
+        <option value="La Esencia">La Esencia — Oxapampa</option>
+        <option value="Ambos">Aún no decido</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn--primary footer__submit">Enviar y hablar por WhatsApp</button>
+  </form>
+
+  <div class="footer__bottom">
+    <div class="footer__brand-wrap">
+      <img src="https://inmobiliarialivermont.com/assets/logo-dark.png" alt="Livermont" class="footer__logo-img">
+      <p>© 2026 Livermont Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+    <div class="footer__credit">
+      Diseñado y desarrollado por <a href="#" class="footer__credit-link">Scroll Studios</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== WHATSAPP FLOTANTE ===================== -->
+<a href="https://wa.me/51941454999?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20terrenos%20de%20Livermont"
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Conversar por WhatsApp">
+  <span class="whatsapp-float__dot" title="En línea ahora"></span>
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+    <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.71 4.605 1.933 6.463L4 29l7.727-1.902A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3Zm6.964 17.14c-.294.827-1.463 1.516-2.393 1.717-.638.135-1.47.243-4.27-.918-3.582-1.483-5.89-5.11-6.07-5.348-.176-.238-1.448-1.926-1.448-3.674 0-1.748.917-2.606 1.242-2.964.325-.358.71-.448.947-.448.237 0 .474.002.681.013.219.011.512-.083.8.61.294.708.999 2.446 1.087 2.624.088.178.147.386.03.624-.117.238-.176.386-.353.594-.176.208-.372.464-.53.624-.177.178-.362.371-.156.727.207.356.919 1.516 1.973 2.456 1.355 1.211 2.499 1.586 2.855 1.764.356.178.563.148.77-.09.207-.238.887-1.035 1.124-1.39.238-.356.475-.297.799-.178.325.119 2.06.972 2.414 1.148.355.178.591.267.68.416.089.148.089.856-.205 1.683Z"/>
+  </svg>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
