@@ -447,6 +447,153 @@ p{ margin:0; }
 
 
 /* =========================================================
+   PERFIL DE LA ASESORA (CRISTY)
+   ========================================================= */
+.asesora{
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(168,118,62,0.14), transparent 75%),
+    var(--tierra-900);
+  color:var(--arena-100);
+  padding:6rem var(--gutter);
+  border-top:1px solid rgba(241,233,218,0.1);
+  border-bottom:1px solid rgba(241,233,218,0.1);
+  position:relative;
+}
+
+.asesora__inner{
+  max-width:var(--container);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(300px, 360px) 1fr;
+  gap:clamp(2.5rem, 5vw, 4.5rem);
+  align-items:center;
+}
+
+.asesora__media{
+  display:flex;
+  justify-content:center;
+}
+
+.asesora__photo-wrap{
+  position:relative;
+  width:100%;
+  max-width:360px;
+  aspect-ratio:4 / 5;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(241,233,218,0.16);
+  box-shadow:0 20px 48px rgba(0,0,0,0.5);
+  background:var(--tierra-800);
+}
+
+.asesora__photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .4s var(--ease-out);
+}
+.asesora__photo-wrap:hover .asesora__photo{
+  transform:scale(1.03);
+}
+
+.asesora__badge{
+  position:absolute;
+  bottom:16px;
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  z-index:2;
+  background:rgba(33,58,46,0.92);
+  color:#a3e635;
+  border:1px solid rgba(163,230,53,0.35);
+  border-radius:999px;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  padding:0.45rem 1rem;
+  font-size:0.78rem;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+  gap:0.45rem;
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
+}
+
+.asesora__content{
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+}
+
+.asesora__kicker{
+  font-size:0.85rem;
+  color:var(--toscana-200);
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+
+.asesora__title{
+  color:var(--arena-050);
+  font-size:var(--fs-h2);
+  line-height:1.15;
+}
+
+.asesora__bio{
+  color:rgba(241,233,218,0.82);
+  font-size:1.02rem;
+  line-height:1.7;
+  max-width:44rem;
+}
+
+.asesora__stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1rem;
+  margin-top:0.4rem;
+  margin-bottom:0.4rem;
+}
+
+.asesora__stat{
+  background:rgba(241,233,218,0.04);
+  border:1px solid rgba(241,233,218,0.12);
+  border-radius:16px;
+  padding:1rem 1.15rem;
+  display:flex;
+  flex-direction:column;
+  gap:0.3rem;
+  transition:border-color .3s var(--ease-out), background-color .3s var(--ease-out);
+}
+.asesora__stat:hover{
+  border-color:rgba(228,201,160,0.35);
+  background:rgba(241,233,218,0.07);
+}
+
+.asesora__stat-label{
+  font-size:0.75rem;
+  color:var(--toscana-200);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  font-weight:600;
+}
+
+.asesora__stat-value{
+  font-size:0.92rem;
+  font-weight:600;
+  color:var(--arena-050);
+  line-height:1.4;
+}
+
+.asesora__actions{
+  margin-top:0.4rem;
+}
+
+.asesora__btn{
+  width:fit-content;
+}
+
+
+/* =========================================================
    PROYECTOS — DÍPTICO
    ========================================================= */
 .proyectos{
@@ -1471,6 +1618,12 @@ p{ margin:0; }
 
   .footer__form{ grid-template-columns:1fr 1fr; }
   .footer__submit{ grid-column:1 / -1; }
+
+  .asesora{ padding:4.5rem var(--gutter); }
+  .asesora__inner{ grid-template-columns:1fr; gap:2.5rem; }
+  .asesora__media{ justify-content:flex-start; }
+  .asesora__photo-wrap{ max-width:320px; }
+  .asesora__stats{ grid-template-columns:repeat(3, 1fr); }
 }
 
 
@@ -1547,6 +1700,23 @@ p{ margin:0; }
   .footer__bottom{ flex-direction:column; align-items:flex-start; }
 
   .whatsapp-float{ width:52px; height:52px; right:1rem; bottom:1rem; }
+
+  /* Asesora — Mobile (≤720px y probado en 375px) */
+  .asesora{ padding:3.5rem 1.25rem; }
+  .asesora__inner{ display:flex; flex-direction:column; align-items:stretch; gap:2rem; }
+  .asesora__media{ display:flex; justify-content:center; width:100%; }
+  .asesora__photo-wrap{ width:min(100%, 280px); max-width:280px; aspect-ratio:4 / 5; border-radius:20px; }
+  .asesora__badge{ bottom:12px; font-size:0.75rem; padding:0.4rem 0.85rem; }
+  .asesora__content{ gap:1.1rem; text-align:left; }
+  .asesora__kicker{ font-size:0.8rem; }
+  .asesora__title{ font-size:clamp(1.75rem, 6vw, 2.2rem); }
+  .asesora__bio{ font-size:0.98rem; line-height:1.65; }
+  .asesora__stats{ display:flex; flex-direction:column; gap:0.75rem; width:100%; }
+  .asesora__stat{ padding:0.9rem 1rem; border-radius:14px; }
+  .asesora__stat-label{ font-size:0.72rem; }
+  .asesora__stat-value{ font-size:0.9rem; }
+  .asesora__actions{ width:100%; }
+  .asesora__btn{ width:100%; }
 }
 
 
