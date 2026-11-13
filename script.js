@@ -1,5 +1,5 @@
 /* =========================================================
-   LIVERMONT — script.js
+   CRISTY BIENES RAÍCES — script.js
    Lenis smooth scroll, GSAP/ScrollTrigger, canvas hero,
    scroll horizontal (desktop) / carrusel táctil (mobile)
    ========================================================= */
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fontIndex = (fontIndex + 1) % fonts.length;
         wordCrecer.style.fontFamily = fonts[fontIndex];
       }
-    }, 2200);
+    }, 1000);
 
     // Ráfaga kinetic al pasar el mouse (10 FPS font shuffle)
     wordCrecer.addEventListener('mouseenter', () => {
@@ -464,6 +464,214 @@ document.addEventListener('DOMContentLoaded', () => {
         ScrollTrigger.refresh();
       });
     });
+  }
+
+  /* -----------------------------------------------------
+     13. GALERÍA NARRATIVA — parallax de las fotos + entrada
+         de las tarjetas glass ligada al scroll
+  ----------------------------------------------------- */
+  if (!prefersReducedMotion){
+    const storyEl = document.querySelector('.story');
+
+    if (storyEl){
+      // Cada foto deriva a distinta velocidad mientras el marco está fijo
+      gsap.utils.toArray('.story__photo').forEach((photo) => {
+        const speed = parseFloat(photo.dataset.speed) || 10;
+        gsap.fromTo(photo,
+          { yPercent: -speed },
+          {
+            yPercent: speed,
+            rotation: speed > 0 ? 2 : -2,   // se suma al rotate de CSS
+            ease: 'none',
+            scrollTrigger: {
+              trigger: storyEl,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.6,
+            },
+          }
+        );
+      });
+
+      // Cada tarjeta aparece a medida que sube por la pantalla
+      gsap.utils.toArray('.story__card').forEach((card) => {
+        gsap.fromTo(card,
+          { opacity: 0.15, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 92%',
+              end: 'top 60%',
+              scrub: true,
+            },
+          }
+        );
+      });
+    }
+  }
+
+  /* -----------------------------------------------------
+     14. MAPAS — un solo iframe, creado solo cuando la sección
+         se acerca al viewport. Las pestañas cambian el src.
+  ----------------------------------------------------- */
+  const ubicFrame = document.getElementById('ubicFrame');
+  const ubicOpen  = document.getElementById('ubicOpen');
+  const ubicTabs  = document.querySelectorAll('.ubic__tab');
+
+  if (ubicFrame && ubicTabs.length){
+    // Reemplaza por las coordenadas EXACTAS de cada proyecto
+    // (clic derecho en Google Maps → copiar coordenadas).
+    const ZONES = {
+      huaral:   { lat: -11.4956, lng: -77.2081, zoom: 14, label: 'Huaral' },
+      oxapampa: { lat: -10.5747, lng: -75.3960, zoom: 14, label: 'Oxapampa' },
+    };
+
+    let currentZone = 'huaral';
+    let mapIframe = null;
+
+    const embedUrl = (z) =>
+      `https://www.google.com/maps?q=${z.lat},${z.lng}&z=${z.zoom}&output=embed`;
+    const openUrl = (z) =>
+      `https://www.google.com/maps/search/?api=1&query=${z.lat},${z.lng}`;
+
+    function renderMap(){
+      const z = ZONES[currentZone];
+      ubicOpen.href = openUrl(z);
+
+      if (!mapIframe){
+        mapIframe = document.createElement('iframe');
+        mapIframe.loading = 'lazy';
+        mapIframe.referrerPolicy = 'no-referrer-when-downgrade';
+        mapIframe.setAttribute('allowfullscreen', '');
+        ubicFrame.textContent = '';
+        ubicFrame.appendChild(mapIframe);
+        ubicFrame.dataset.loaded = 'true';
+      }
+      mapIframe.title = `Mapa de ${z.label}`;
+      mapIframe.src = embedUrl(z);
+    }
+
+    // Carga diferida real: nada de Google Maps hasta estar cerca de la sección
+    const mapObserver = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)){
+        renderMap();
+        mapObserver.disconnect();
+      }
+    }, { rootMargin: '300px 0px' });
+    mapObserver.observe(ubicFrame);
+
+    ubicTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        currentZone = tab.dataset.zone;
+        ubicTabs.forEach(t => {
+          const active = t === tab;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', String(active));
+        });
+        if (mapIframe) renderMap();
+        else ubicOpen.href = openUrl(ZONES[currentZone]);
+      });
+    });
+
+    ubicOpen.href = openUrl(ZONES[currentZone]);
+  }
+
+  /* -----------------------------------------------------
+     15. SONIDO AMBIENTAL — nunca autoplay; el usuario decide.
+         Fade in/out suave, volumen bajo, pausa al cambiar de pestaña.
+  ----------------------------------------------------- */
+  const ambientAudio = document.getElementById('ambientAudio');
+  const soundToggle  = document.getElementById('soundToggle');
+  const soundTip     = document.getElementById('soundTip');
+
+  if (ambientAudio && soundToggle){
+    const TARGET_VOLUME = 0.22;   // sutil (en iOS el volumen lo fija el sistema)
+    const PREF_KEY = 'lv-sound';
+    const HINT_KEY = 'lv-sound-hint';
+    let fadeRaf = null;
+    let isPlaying = false;
+    let resumeOnVisible = false;
+
+    const safeGet = (k) => { try { return localStorage.getItem(k); } catch { return null; } };
+    const safeSet = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+
+    function setUI(on){
+      isPlaying = on;
+      soundToggle.setAttribute('aria-pressed', String(on));
+      soundToggle.setAttribute('aria-label', on ? 'Silenciar sonido ambiental' : 'Activar sonido ambiental');
+    }
+
+    function fadeTo(volume, ms, done){
+      cancelAnimationFrame(fadeRaf);
+      const from = ambientAudio.volume;
+      const t0 = performance.now();
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / ms);
+        ambientAudio.volume = Math.max(0, Math.min(1, from + (volume - from) * p));
+        if (p < 1) fadeRaf = requestAnimationFrame(step);
+        else if (done) done();
+      };
+      fadeRaf = requestAnimationFrame(step);
+    }
+
+    async function playAmbient(){
+      try{
+        ambientAudio.volume = 0;
+        await ambientAudio.play();          // solo funciona tras un gesto del usuario
+        fadeTo(TARGET_VOLUME, 1800);
+        setUI(true);
+        safeSet(PREF_KEY, 'on');
+        hideTip();
+      } catch (err){
+        setUI(false);                       // el navegador lo bloqueó: sin drama
+      }
+    }
+
+    function pauseAmbient(savePref = true){
+      fadeTo(0, 600, () => ambientAudio.pause());
+      setUI(false);
+      if (savePref) safeSet(PREF_KEY, 'off');
+    }
+
+    soundToggle.addEventListener('click', () => {
+      isPlaying ? pauseAmbient() : playAmbient();
+    });
+
+    // Si el usuario lo dejó activado antes, se reanuda con su primer gesto
+    // (un scroll NO cuenta como gesto para el navegador; un toque o tecla sí).
+    if (safeGet(PREF_KEY) === 'on'){
+      const resume = () => {
+        playAmbient();
+        ['pointerdown', 'keydown'].forEach(ev => window.removeEventListener(ev, resume));
+      };
+      ['pointerdown', 'keydown'].forEach(ev => window.addEventListener(ev, resume, { once: true }));
+    }
+
+    // Cortesía: no sonar en pestañas en segundo plano
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && isPlaying){
+        resumeOnVisible = true;
+        ambientAudio.pause();
+      } else if (!document.hidden && resumeOnVisible){
+        resumeOnVisible = false;
+        ambientAudio.play().catch(() => setUI(false));
+      }
+    });
+
+    // Aviso discreto (una sola vez)
+    function hideTip(){ soundTip.classList.remove('is-visible'); }
+    if (!safeGet(HINT_KEY) && !safeGet(PREF_KEY)){
+      setTimeout(() => {
+        if (!isPlaying){
+          soundTip.classList.add('is-visible');
+          safeSet(HINT_KEY, '1');
+          setTimeout(hideTip, 5000);
+        }
+      }, 6000);
+    }
   }
 
   /* -----------------------------------------------------
